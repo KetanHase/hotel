@@ -1,0 +1,116 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Ensures slides outside the viewport are hidden */
+    display: flex;
+    align-items: center; /* Vertically center the slider */
+  }
+  
+  /* Slider styling */
+  .slider {
+    display: flex;
+    width: 100%;
+    overflow: hidden; /* Hide overflow to create a smooth sliding effect */
+    position: relative;
+  }
+  
+  /* Track for slides */
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+  }
+  
+  /* Slide styling */
+  .slide {
+    flex: 0 0 calc(100% / 7); /* By default, show 7 slides */
+    box-sizing: border-box;
+    padding: 10px; /* Add padding for better spacing */
+    text-align: center;
+    transition: transform 0.3s ease; /* Add a hover effect if needed */
+  }
+  
+  
+
+  
+  /* Circular category images */
+  .category-image {
+    max-width: 100%;
+    height: auto;
+    width: 80px; /* Set a fixed width for larger screens */
+    height: 80px; /* Ensure the height matches the width for circular shape */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well inside the circular shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  }
+  
+  /* Navigation buttons */
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-10%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%; /* Circular buttons */
+    transition: background-color 0.3s ease;
+  }
+  
+  .slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken button on hover */
+  }
+  
+  .slider-button.left {
+    left: 10px; /* Position the left button */
+  }
+  
+  .slider-button.right {
+    right: 10px; /* Position the right button */
+  }
+  
+  .no-data-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Styles */
+  
+  /* For tablets and medium screens */
+  @media (max-width: 1024px) {
+    .slide {
+      flex: 0 0 calc(100% / 5); /* Show 5 slides */
+    }
+  
+    .category-image {
+      width: 70px; /* Smaller image size for tablets */
+      height: 70px;
+    }
+  }
+  
+  /* For small screens and mobile devices */
+  @media (max-width: 768px) {
+    .slide {
+      flex: 0 0 calc(100% / 4); /* Show 4 slides */
+    }
+  
+    .category-image {
+      width: 60px; /* Smaller image size for mobile */
+      height: 60px;
+    }
+  }
+  
+  /* For very small screens (phones in portrait mode) */
+  @media (max-width: 480px) {
+    .slide {
+      flex: 0 0 calc(100% / 2); /* Show 2 slides */
+    }
+  
+    .category-image {
+      width: 50px; /* Even smaller image size */
+      height: 50px;
+    }
+  }
